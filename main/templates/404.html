@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title" style="font-size: 6rem; color: var(--accent-magenta);">404</h1>
+        <h2 style="color: var(--accent-cyan); margin-bottom: 1rem;">Page Not Found</h2>
+        <p class="page-description">
+            Oops! The page you're looking for doesn't exist.
+        </p>
+        <div style="margin-top: 2rem;">
+            <a href="{% url 'main:home' %}" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 4rem 0;">
+    <div class="container">
+        <div class="terminal-window" style="max-width: 600px; margin: 0 auto;">
+            <div class="terminal-header">
+                <span class="terminal-dot" style="background: #ff5f56;"></span>
+                <span class="terminal-dot" style="background: #ffbd2e;"></span>
+                <span class="terminal-dot" style="background: #27c93f;"></span>
+            </div>
+            <div class="terminal-body">
+                <p><span class="terminal-prompt">$</span> <span class="terminal-command">find page</span></p>
+                <p class="terminal-output" style="color: var(--accent-magenta);">
+                    Error: Page not found (404)<br>
+                    The requested URL was not found on this server.
+                </p>
+                <p><span class="terminal-prompt">$</span> <span class="terminal-cursor">_</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

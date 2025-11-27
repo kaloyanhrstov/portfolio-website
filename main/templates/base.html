@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'main:home' %}" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'main:home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+                <li><a href="{% url 'main:projects' %}" class="{% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a></li>
+                <li><a href="{% url 'main:resume' %}" class="{% if request.resolver_match.url_name == 'resume' %}active{% endif %}">Resume</a></li>
+                <li><a href="{% url 'main:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Portfolio. Built with Django &amp; passion.</p>
+                <div class="footer-links">
+                    <a href="{% url 'main:home' %}">Home</a>
+                    <a href="{% url 'main:projects' %}">Projects</a>
+                    <a href="{% url 'main:resume' %}">Resume</a>
+                    <a href="{% url 'main:contact' %}">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
