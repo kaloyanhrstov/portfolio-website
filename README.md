@@ -20,21 +20,6 @@ A modern portfolio website with retro aesthetic built with Django, showcasing pr
 - python-decouple for environment variables
 - Pillow for image handling
 
-## ⚠️ Security Notice - Before Public Deployment
-
-**IMPORTANT**: This repository contains example data. Before deploying to production:
-
-1. **Generate a new SECRET_KEY** (never use the default!)
-   ```bash
-   python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-   ```
-2. **Change the admin password** from `admin123` to a strong password
-3. **Create a `.env` file** (copy from `.env.example`) and set your environment variables
-4. **Set `DEBUG=False`** in production
-5. **Never commit** your `.env` file, `db.sqlite3`, or `media/` folder with personal data
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the complete security checklist.
-
 ## Quick Start
 
 The project is already set up and ready to use! Here's what's been done:
